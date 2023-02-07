@@ -1,0 +1,33 @@
+
+class array {
+    public static void main(String args[]) {
+        int nums[] = { 3,2,2,3 };
+        int a, b, t;
+        int size;
+
+        size = 4; // Количество элементов для сортировки
+
+        // отобразить исходный массив
+        System.out.print("Original array is:");
+        for(int i=0; i < size; i++)
+            System.out.print(" " + nums[i]);
+        System.out.println();
+
+        // реализовать алгоритм пузырьковой сортировки
+        for(a=1; a < size; a++)
+            for(b=size-1; b >= a; b--) {
+                if(nums[b-1] > nums[b]) { // если требуемый порядок
+                // следования не соблюдается, поменять элементы местами
+                t = nums[b-1];
+                nums[b-1] = nums[b];
+                nums[b] = t;
+            }
+        }
+
+        // отобразить отсортированный массив
+        System.out .print ("Sorted array is: ");
+        for(int i=0; i < size; i++)
+            System.out.print(" " + nums[i]);
+        System.out.println();
+    }
+}
